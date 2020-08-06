@@ -3,6 +3,7 @@ if has("win32") | let plugins = "~/AppData/Local/nvim/plugins" | endif  " on win
 
 call plug#begin(plugins)
   Plug 'sheerun/vim-polyglot'                                           " better syntax highlighting
+  Plug 'martinda/Jenkinsfile-vim-syntax'                                " vim-polyglot groovy syntax is broken
   Plug 'tpope/vim-vinegar'                                              " improved explorer window
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }                   " install the fzf tool (it is not always available from a package manager
   Plug 'junegunn/fzf.vim'                                               " adds fzf support
@@ -25,8 +26,14 @@ let g:goyo_width="85%" | let g:goyo_height="95%"                        " set th
 let g:seoul256_background=235                                           " set the default seoul256 background colour a little darker
 set termguicolors | colo seoul256 | let g:airline_theme="seoul256"      " set the colorscheme to junegunn/seoul256.vim, also set the status bar theme
 
+" fix weird error where closing braces sometimes have a red bg.
+highlight Error guibg=None ctermbg=None
+
 " remove trailing spaces and newlines on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" use jenkins highlighting over polyglot highlighting for groovy files
+autocmd BufReadPost,BufNewFile *.groovy set filetype=Jenkinsfile
 
 " Start Limelight when entering Goyo mode
 autocmd! User GoyoEnter Limelight
