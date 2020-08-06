@@ -13,4 +13,8 @@ echo 'installing vim-plug plugin manager'
 sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo 'installing nvim plugins'
-nvim +PlugInstall +qa
+nvim +PlugInstall +qa &
+
+echo 'removing leftover artifact downloads'
+rm ./nvim.appimage
+rm ./ripgrep-12.1.1.deb
