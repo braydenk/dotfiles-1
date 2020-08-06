@@ -13,4 +13,4 @@ echo 'installing vim-plug plugin manager'
 sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo 'installing nvim plugins'
-nvim +PlugInstall
+nvim +PlugInstall +qa
