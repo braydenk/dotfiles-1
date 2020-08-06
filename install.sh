@@ -3,7 +3,7 @@ curl -sSLo ripgrep-12.1.1.deb https://github.com/BurntSushi/ripgrep/releases/dow
 sudo apt install ./ripgrep-12.1.1.deb -y
 
 echo 'installing neovim'
-curl -sSLo neovim.appimage https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage
+curl -sSLo nvim.appimage https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage
 chmod +x ./nvim.appimage && ./nvim.appimage
 
 echo 'installing init.vim configuration file'
