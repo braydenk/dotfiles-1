@@ -47,20 +47,17 @@ nnoremap <C-F> :Rg<CR>
 nnoremap <C-R> :OverCommandLine<CR>%s/
 
 " Standard Hotkey Settings
-tnoremap <silent> <C-Esc>   <C-\><C-N><CR>
+tnoremap <silent> <Esc><Esc>   <C-\><C-N><CR>
 " quick split resizing
 nnoremap <C-Left>           :vertical resize -10<CR>
 nnoremap <C-Right>          :vertical resize +10<CR>
 nnoremap <C-Up>             :resize -10<CR>
 nnoremap <C-Down>           :resize +10<CR>
 " quicker split focusing
-nnoremap <Leader>h          <C-w>h
-nnoremap <Leader>j          <C-w>j
-nnoremap <Leader>k          <C-w>k
-nnoremap <Leader>l          <C-w>l
+nnoremap <C-H>          <C-w>h
+nnoremap <C-J>          <C-w>j
+nnoremap <C-K>          <C-w>k
+nnoremap <C-L>          <C-w>l
 nnoremap <Leader>r          <C-W>R
 nnoremap <Leader>s          :sp<CR>
 nnoremap <Leader>v          :vsp<CR>
-" quick save and quit commands
-nnoremap <Leader>w          :w<CR>
-nnoremap <Leader>q          :q<CR>
