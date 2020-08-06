@@ -5,7 +5,6 @@ catch { iwr -useb get.scoop.sh | iex }
 Write-Host -ForegroundColor Yellow "Installing tools"
 scoop install neovim fzf ripgrep
 
-
 Write-Host -ForegroundColor Yellow "Installing init.vim configuration file"
 Get-Content ./init.vim -Raw | ni $HOME/AppData/Local/nvim/init.vim -Force
 
@@ -14,3 +13,5 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | 
 
 Write-Host -ForegroundColor Yellow "Installing neovim plugins"
 nvim +PlugInstall +qa
+
+Write-Host -ForegroundColor Yellow "Done"
