@@ -20,9 +20,9 @@ set nobackup nowritebackup noswapfile					                " disable backups and 
 set lazyredraw ttyfast updatetime=300                                   " make the vim ui a littler snappier on large files and ttys
 set encoding=utf-8 termencoding=utf-8                                   " set the default encoding to utf8
 set ignorecase smartcase nohlsearch incsearch wildmenu                  " make search a little smarter
+let g:fzf_layout = { 'down': '20%' }                                    " set the location and size of the fuzzy finder
 let g:goyo_width="85%" | let g:goyo_height="95%"                        " set the default Goyo mode window size
 let g:seoul256_background=235                                           " set the default seoul256 background colour a little darker
-let g:fzf_preview_window = 'bottom:20%'                                 " fzf preview window size and location
 set termguicolors | colo seoul256 | let g:airline_theme="seoul256"      " set the colorscheme to junegunn/seoul256.vim, also set the status bar theme
 
 " remove trailing spaces and newlines on save

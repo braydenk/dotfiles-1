@@ -3,7 +3,7 @@ try { Get-Command scoop }
 catch { iwr -useb get.scoop.sh | iex }
 
 Write-Host -ForegroundColor Yellow "Installing tools"
-scoop install neovim fzf ripgrep
+scoop install neovim ripgrep
 
 Write-Host -ForegroundColor Yellow "Installing init.vim configuration file"
 Get-Content ./init.vim -Raw | ni $HOME/AppData/Local/nvim/init.vim -Force
