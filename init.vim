@@ -12,6 +12,7 @@ call plug#begin(plugins)
   Plug 'junegunn/seoul256.vim'                                          " adds a low-contrast color scheme
   Plug 'vim-airline/vim-airline'                                        " adds an updated status bar
   Plug 'vim-airline/vim-airline-themes'                                 " adds extended theming for the vim-airline statusbar
+  Plug 'osyo-manga/vim-over'                                            " highlight matches to :s or :%s before accepting change
 call plug#end()
 
 let mapleader=" "                                                       " set the leader key to ; for easy typing
@@ -25,6 +26,7 @@ let g:fzf_layout = { 'down': '20%' }                                    " set th
 let g:goyo_width="85%" | let g:goyo_height="95%"                        " set the default Goyo mode window size
 let g:seoul256_background=235                                           " set the default seoul256 background colour a little darker
 set termguicolors | colo seoul256 | let g:airline_theme="seoul256"      " set the colorscheme to junegunn/seoul256.vim, also set the status bar theme
+set cursorline                                                          " add a current line highlight for the active window
 
 " fix weird error where closing braces sometimes have a red bg.
 highlight Error guibg=None ctermbg=None
@@ -40,8 +42,9 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " Plugin Hotkey Settings
-nnoremap <C-F> :Rg<CR>
 nnoremap <C-O> :Files<CR>
+nnoremap <C-F> :Rg<CR>
+nnoremap <C-R> :OverCommandLine<CR>%s/
 
 " Standard Hotkey Settings
 tnoremap <silent> <C-Esc>   <C-\><C-N><CR>
